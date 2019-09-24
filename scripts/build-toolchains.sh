@@ -109,6 +109,7 @@ else
     echo "=> Initializing ${TOOLCHAIN} submodules"
     git submodule update --init "${SRCDIR}/riscv-gnu-toolchain"
     git -C "${SRCDIR}/riscv-gnu-toolchain" config submodule.qemu.update none
+    git config submodule.toolchains/riscv-tools/riscv-openocd.update none
     git submodule update --init --recursive "${SRCDIR}" #--jobs 8
 
     # Scale number of parallel make jobs by hardware thread count
